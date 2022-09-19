@@ -1,0 +1,48 @@
+header,
+footer {
+  background-color: #f76c6c;
+  padding: 1rem;
+}
+header,
+h2 {
+  color: white;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+ul {
+  display: flex;
+}
+
+h1,
+li {
+  padding: 0.5rem;
+}
+
+div {
+  background: url('./landscape.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 20vh;
+}
+h2 {
+  text-align: center;
+  padding-top: calc(20vh / 4);
+  font-size: 1.5rem;
+}
+main {
+  background-color: #e5e5e5;
+}
+section {
+  width: 60vw;
+  max-width: 80rem;
+  margin: auto;
+}
+
+h3 {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
