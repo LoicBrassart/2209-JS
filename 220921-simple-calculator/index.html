@@ -8,53 +8,32 @@
   </head>
   <body>
     <script>
-      // console.log('Hello world!');
-      let firstValue = 1;
-      let operator = '+';
-      let secondValue = 2;
-      // console.log(firstValue);
-      // console.log(operator);
-      // console.log(secondValue);
+      function calculator() {
+        let firstValue = prompt("What's the first value ?");
+        firstValue = parseInt(firstValue);
+        const operator = prompt("What's the operator ?");
+        const secondValue = parseInt(prompt("What's the second value ?"));
 
-      firstValue = prompt("What's the first value ?");
-      firstValue = parseInt(firstValue);
-      // console.log(firstValue);
-      operator = prompt("What's the operator ?");
-      // console.log(operator);
-      secondValue = parseInt(prompt("What's the second value ?"));
-      // console.log(secondValue);
-
-      //console.log(firstValue + secondValue);
-
-      // if (operator === '+') {
-      //   console.log(firstValue + secondValue);
-      // } else if (operator === '-') {
-      //   console.log(firstValue - secondValue);
-      // } else if (operator === '*') {
-      //   console.log(firstValue * secondValue);
-      // } else if (operator === '/') {
-      //   console.log(firstValue / secondValue);
-      // } else {
-      //   console.log('Invalid Operator!');
-      // }
-
-      switch (operator) {
-        case '+':
-          console.log(firstValue + secondValue);
-          break;
-        case '-':
-          console.log(firstValue - secondValue);
-          break;
-        case '*':
-          console.log(firstValue * secondValue);
-          break;
-        case '/':
-          console.log(firstValue / secondValue);
-          break;
-        default:
-          console.log('Invalid Operator!');
-          break;
+        switch (operator) {
+          case '+':
+            return firstValue + secondValue;
+            break;
+          case '-':
+            return firstValue - secondValue;
+            break;
+          case '*':
+            return firstValue * secondValue;
+            break;
+          case '/':
+            return firstValue / secondValue;
+            break;
+          default:
+            return 'Invalid Operator!';
+            break;
+        }
       }
+
+      calculator();
     </script>
   </body>
 </html>
