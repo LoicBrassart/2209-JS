@@ -1,0 +1,6 @@
+main {
+  width: 100vw;
+  aspect-ratio: 1;
+  background-color: yellowgreen;
+  border-radius: 50%;
+}

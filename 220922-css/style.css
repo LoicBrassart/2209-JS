@@ -1,0 +1,18 @@
+html {
+  --mainColor: rgba(0, 0, 255, 0.7);
+  --opacityFull: 1;
+  --opacityPart: 0.8;
+}
+
+html * {
+  opacity: var(--opacityPart);
+  color: var(--mainColor);
+}
+
+html *:hover {
+  opacity: var(--opacityFull);
+}
+
+.li {
+  --mainColor: rgba(0, 255, 0, 1);
+}
