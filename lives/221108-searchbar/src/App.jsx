@@ -1,12 +1,22 @@
-import Home from "./pages/Home";
-
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [query, setQuery] = useState("");
+
+  const hChangeQuery = (evt) => {
+    setQuery(evt.target.value);
+  };
+
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
+    <div>
+      <h1>Characters gallery !</h1>
+      <input
+        type="search"
+        placeholder="Amina, Olber, Nazuna, ..."
+        value={query}
+        onChange={hChangeQuery}
+      />
     </div>
   );
 }
