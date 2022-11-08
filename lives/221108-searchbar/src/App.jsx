@@ -1,8 +1,18 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
   const [query, setQuery] = useState("");
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5555/async/characters?needle=${query}`)
+      .then(({ data }) => {
+        setCharacters(data);
+      });
+  }, [query]);
 
   const hChangeQuery = (evt) => {
     setQuery(evt.target.value);
@@ -17,6 +27,11 @@ function App() {
         value={query}
         onChange={hChangeQuery}
       />
+      <ul>
+        {characters.map((character) => {
+          return <li>{character.name}</li>;
+        })}
+      </ul>
     </div>
   );
 }
