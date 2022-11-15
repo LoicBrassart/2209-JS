@@ -1,17 +1,26 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function Card({ cardData }) {
   return (
-    <article>
-      <h2>{cardData.name}</h2>
+    <Link to={`/cards/${cardData.id}`}>
       <img src={cardData.imageUrl} alt={cardData.name} />
-    </article>
+    </Link>
   );
 }
 
+Card.defaultProps = {
+  cardData: {
+    id: "",
+    name: "",
+    imageUrl:
+      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013",
+  },
+};
 Card.propTypes = {
   cardData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string.isRequired,
-  }).isRequired,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    imageUrl: PropTypes.string,
+  }),
 };

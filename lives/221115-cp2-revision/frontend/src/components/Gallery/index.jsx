@@ -15,7 +15,7 @@ export default function Gallery() {
     <ul>
       {cards
         .filter((card) => {
-          if (card.name && card.imageUrl) return true;
+          if (card.name) return true;
           return false;
         })
         .map((card) => {
