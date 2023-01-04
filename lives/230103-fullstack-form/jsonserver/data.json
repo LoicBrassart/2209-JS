@@ -2,11 +2,15 @@
   "users": [
     {
       "id": 1,
-      "firstname": "Loïc"
+      "firstname": "RomainsdfsFD"
     },
     {
       "firstname": "Gaetan",
       "id": 2
+    },
+    {
+      "firstname": "Asma",
+      "id": 3
     }
   ]
 }
