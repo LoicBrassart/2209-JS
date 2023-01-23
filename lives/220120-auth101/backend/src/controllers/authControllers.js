@@ -2,12 +2,12 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const models = require("../models");
 
-const signup = (req, res) => {
+const signup = async (req, res) => {
   const { email } = req.body;
   let { password } = req.body;
   password = bcrypt.hashSync(password, 10);
-  models.user.insert({ email, password });
-  const user = { email, id: 1 };
+  const [queryFeedback] = await models.user.insert({ email, password });
+  const user = { email, id: queryFeedback.insertId };
   const token = jwt.sign(user, "toto");
   res.send({ token, user });
 };
