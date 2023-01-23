@@ -1,5 +1,4 @@
 const express = require("express");
-const bcrypt = require("bcrypt");
 
 const router = express.Router();
 
@@ -11,10 +10,9 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
-router.post("/signup", (req, res) => {
-  const { email, password } = req.body;
-  bcrypt.hashSync(password, 10);
-  res.send(`Hello ${email}, you're authed via the password ${password}`);
-});
+const authControllers = require("./controllers/authControllers");
+
+router.post("/signup", authControllers.signup);
+router.post("/login", authControllers.login);
 
 module.exports = router;

@@ -22,7 +22,8 @@ const login = async (req, res) => {
   if (isPasswordOk) {
     const [user] = results;
     delete user.password;
-    res.send(user);
+    const token = jwt.sign(user, "toto");
+    res.send({ token, user });
   } else {
     res.status(401).send("Nope");
   }
